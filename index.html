@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Someone Special ❤️</title>
+
+<title>For Someone Very Special ❤️</title>
 
 <style>
 
@@ -15,9 +16,9 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-overflow-x:hidden;
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
 color:white;
+overflow-x:hidden;
 min-height:100vh;
 }
 
@@ -27,40 +28,44 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
-text-align:center;
 }
 
-.glass{
+.card{
+width:100%;
+max-width:700px;
+padding:45px;
+text-align:center;
+
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(15px);
-padding:40px;
-border-radius:25px;
-max-width:700px;
-width:100%;
-box-shadow:0 8px 32px rgba(0,0,0,.4);
+border-radius:30px;
+
+box-shadow:0 8px 40px rgba(255,105,180,.2);
+border:1px solid rgba(255,255,255,.1);
 }
 
-h1{
+.hero h1{
 font-size:3rem;
-margin-bottom:20px;
+margin-bottom:15px;
+}
+
+.subtitle{
+font-size:1.2rem;
+color:#fbcfe8;
+margin-top:15px;
 }
 
 #countdown{
 font-size:2rem;
 font-weight:bold;
-color:#ffd6e8;
-}
-
-.subtitle{
-font-size:1.2rem;
-opacity:.8;
-margin-top:15px;
+color:#ffb4d9;
+margin-top:20px;
 }
 
 #surprise{
 display:none;
-animation:fadeIn 2s ease;
 padding:40px 20px;
+animation:fadeIn 2s ease;
 }
 
 @keyframes fadeIn{
@@ -74,9 +79,26 @@ transform:translateY(0);
 }
 }
 
+.top-title{
+text-align:center;
+font-size:2.8rem;
+margin-bottom:10px;
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-subtitle{
+text-align:center;
+color:#fbcfe8;
+margin-bottom:40px;
+font-size:1.1rem;
+}
+
 .gallery{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
@@ -84,11 +106,11 @@ gap:20px;
 
 .gallery img{
 width:100%;
-height:330px;
+height:340px;
 object-fit:cover;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(255,255,255,0.15);
+border-radius:25px;
 transition:.4s;
+box-shadow:0 10px 25px rgba(255,255,255,.1);
 }
 
 .gallery img:hover{
@@ -96,42 +118,46 @@ transform:scale(1.05);
 }
 
 .letter{
-max-width:850px;
+max-width:900px;
 margin:60px auto;
-background:rgba(255,255,255,0.08);
+
+background:rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
+
 padding:40px;
-border-radius:25px;
+border-radius:30px;
 line-height:2;
 font-size:1.15rem;
-box-shadow:0 8px 32px rgba(0,0,0,.4);
+
+box-shadow:0 8px 40px rgba(255,105,180,.15);
 }
 
 .letter h2{
-margin-bottom:25px;
 text-align:center;
-color:#ffd6e8;
+margin-bottom:25px;
+color:#ffd1dc;
 }
 
-.footer{
-text-align:center;
-font-size:2rem;
+.signature{
 margin-top:30px;
+text-align:center;
+font-size:1.5rem;
+color:#ffb4d9;
 }
 
 .heart{
 position:fixed;
-color:#ff7ca8;
-animation:float 10s linear infinite;
+bottom:-50px;
+animation:float linear forwards;
 pointer-events:none;
 }
 
 @keyframes float{
 0%{
-transform:translateY(100vh);
+transform:translateY(0);
 opacity:0;
 }
-10%{
+15%{
 opacity:1;
 }
 100%{
@@ -140,22 +166,26 @@ opacity:0;
 }
 }
 
+audio{
+display:none;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<div class="hero" id="hero">
 
-<div class="glass">
+<div class="card">
 
-<h1>❤️ A Special Moment ❤️</h1>
-
-<div id="countdown"></div>
+<h1>❤️ A Special Surprise ❤️</h1>
 
 <div class="subtitle">
-Something beautiful is waiting for you...
+A beautiful moment is waiting for you...
 </div>
+
+<div id="countdown"></div>
 
 </div>
 
@@ -163,83 +193,100 @@ Something beautiful is waiting for you...
 
 <div id="surprise">
 
+<h1 class="top-title">
+Happy Birthday ❤️
+</h1>
+
+<div class="section-subtitle">
+Today is all about you ✨
+</div>
+
 <div class="gallery">
 
-">
-phote
+<img src="IMG20260308103705.jpg">
+<img src="IMG20260322104713.jpg">
+<img src="IMG20260322171904.jpg">
+<img src="IMG20260517191156.jpg">
 
 </div>
 
 <div class="letter">
 
-<h2>💌 To My Favorite Person</h2>
+<h2>💌 My Dear</h2>
 
 <p>
 
-Today isn't just your birthday.
+Today is more than just your birthday.
 
-Today reminds me how lucky this world is to have someone as wonderful as you.
+It is the celebration of a truly beautiful person who has brought countless wonderful moments into my life.
 
-Thank you for every smile, every conversation, every memory, and every moment that became special simply because you were part of it.
+Thank you for every conversation, every smile, every memory, and every little moment that became special because of you.
 
-You have a beautiful way of making ordinary days feel extraordinary.
+You have a way of making ordinary days feel extraordinary, and your presence always adds warmth and happiness wherever you go.
 
-No matter how many birthdays come and go, I hope your heart is always filled with happiness, peace, love, and all the success you truly deserve.
+As you begin another amazing year of your life, I wish you endless happiness, success, peace, good health, and all the love your heart can hold.
 
-May this year bring you countless reasons to smile and endless moments of joy.
+May every dream you have slowly become reality.
 
-And on your special day, I just want you to know that you are deeply appreciated, genuinely admired, and incredibly special.
+May every challenge become a stepping stone toward something wonderful.
 
-Happy Birthday ❤️
+And may your smile never fade, because it has the magic to brighten even the darkest days.
+
+No matter how many birthdays pass, I hope you always remember how special, appreciated, and genuinely wonderful you are.
+
+Thank you for being you.
+
+And thank you for being such a beautiful part of my life.
+
+❤️
+
+Happy Birthday.
 
 </p>
 
-<div class="footer">
-❤️ Forever Grateful For You ❤️
+<div class="signature">
+With Lots of Love ❤️
 </div>
 
 </div>
 
 </div>
 
-<audio id="music" loop>
-.mp3" type="audio/mpeg">
+<audio id="music" autoplay loop>
+music.mp3
 </audio>
 
 <script>
 
 const targetDate = new Date("July 25, 2026 00:00:00").getTime();
 
-const timer=setInterval(()=>{
+const timer = setInterval(() => {
 
-const now=new Date().getTime();
+const now = new Date().getTime();
+const distance = targetDate - now;
 
-const distance=targetDate-now;
-
-if(distance<=0){
+if(distance <= 0){
 
 clearInterval(timer);
 
-document.querySelector(".hero").style.display="none";
-document.getElementById("surprise").style.display="block";
+document.getElementById('hero').style.display='none';
+document.getElementById('surprise').style.display='block';
 
-document.getElementById("music").play();
+document.getElementById('music').play();
 
 startHearts();
 
 return;
+
 }
 
-const days=Math.floor(distance/(1000*60*60*24));
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds=Math.floor((distance%(1000*60))/1000);
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
 
-document.getElementById("countdown").innerHTML=
-days+" Days "+
-hours+" Hours "+
-minutes+" Minutes "+
-seconds+" Seconds";
+document.getElementById("countdown").innerHTML =
+`${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
 
 },1000);
 
@@ -247,17 +294,17 @@ function startHearts(){
 
 setInterval(()=>{
 
-const heart=document.createElement("div");
+let heart=document.createElement("div");
 
-heart.classList.add("heart");
+heart.className="heart";
 
-heart.innerHTML="❤️";
+heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
 
 heart.style.left=Math.random()*100+"vw";
 
 heart.style.fontSize=(20+Math.random()*25)+"px";
 
-heart.style.animationDuration=(6+Math.random()*6)+"s";
+heart.style.animationDuration=(6+Math.random()*5)+"s";
 
 document.body.appendChild(heart);
 
@@ -265,7 +312,7 @@ setTimeout(()=>{
 heart.remove();
 },12000);
 
-},300);
+},250);
 
 }
 
