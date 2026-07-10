@@ -363,7 +363,7 @@ to be opened without the right key ❤️
 🎥 Our Beautiful Memories
 </h3>
 
-<video controls style="width:100%; border-radius:20px;">
+<video id="memoryVideo" controls style="width:100%; border-radius:20px;">
   <source src="VID20251214161718.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
@@ -374,7 +374,25 @@ to be opened without the right key ❤️
 
 </div>
 
-<div class="letter">
+<div id="finalButtonSection" style="display:none; margin-top:40px; text-align:center;">
+
+<h2 style="font-family:'Dancing Script',cursive; color:#ffd1dc;">
+💌 One Last Thing...
+</h2>
+
+<p style="font-family:'Playfair Display',serif;">
+I have watched all these memories countless times.
+
+But there are a few things I always wanted to tell you from my heart. ❤️
+</p>
+
+<button class="unlock-btn" onclick="showLetter()">
+💖 Read My Heart
+</button>
+
+</div>
+
+<div class="letter" id="loveLetter" style="display:none;">
 
 <h2>💌 To My Dear Renu...❤️</h2>
 
@@ -476,6 +494,16 @@ alert(
 }
 
 
+function showLetter(){
+
+document.getElementById("loveLetter").style.display="block";
+
+document.getElementById("loveLetter").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
 function startHearts(){
 
 setInterval(()=>{
@@ -499,6 +527,18 @@ heart.remove();
 },300);
 
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const video = document.getElementById("memoryVideo");
+
+video.onended = function(){
+
+document.getElementById("finalButtonSection").style.display="block";
+
+};
+
+});
 
 </script>
 
