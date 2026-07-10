@@ -209,23 +209,43 @@ margin-bottom:20px;
 }
 
 .unlock-btn{
-background:linear-gradient(45deg,#ff69b4,#ff1493);
+
+background:linear-gradient(
+135deg,
+#ff7eb3,
+#ff4f81
+);
 
 color:white;
 border:none;
 
-padding:15px 30px;
-border-radius:30px;
+padding:18px 40px;
+
+border-radius:50px;
 
 font-size:18px;
+font-weight:600;
+
+box-shadow:
+0 10px 25px rgba(255,79,129,.35);
+
 cursor:pointer;
 
-transition:.3s;
+transition:.4s;
+
+font-family:'Playfair Display',serif;
 }
 
 .unlock-btn:hover{
-transform:scale(1.05);
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 35px rgba(255,79,129,.45);
+
 }
+
+
 
 #loveDate{
 padding:12px;
@@ -253,6 +273,20 @@ font-size:1.15rem;
 line-height:2;
 }
 
+} 
+
+.video-surprise p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:1.8;
+color:#f8f8f8;
+}
+
+#questionBox p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:1.8;
+color:#f8f8f8;
 }
 
 </style>
@@ -301,8 +335,8 @@ Today is all about you ✨
 <h2>🎁 One More Surprise Waiting For You ❤️</h2>
 
 <p>
-Before you unlock this special memory,
-answer one small question...
+Some memories are too special
+to be opened without the right key ❤️
 </p>
 
 <button class="unlock-btn" onclick="showQuestion()">
@@ -329,8 +363,9 @@ answer one small question...
 🎥 Our Beautiful Memories
 </h3>
 
-<video controls width="100%" style="border-radius:20px;">
-  VID20251214161718.mp4
+<video controls style="width:100%; border-radius:20px;">
+    VID20251214161718.mp4
+    Your browser does not support the video tag.
 </video>
 
 </div>
@@ -452,7 +487,7 @@ heart.className="heart";
 heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
 
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(20+Math.random()*25)+"px";
+heart.style.fontSize=(18+Math.random()*20)+"px";
 heart.style.animationDuration=(6+Math.random()*5)+"s";
 
 document.body.appendChild(heart);
@@ -461,7 +496,7 @@ setTimeout(()=>{
 heart.remove();
 },12000);
 
-},250);
+},300);
 
 }
 
