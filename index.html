@@ -383,7 +383,7 @@ With Lots of Love ❤️
 
 <script>
 
-const targetDate = new Date("July 09, 2026 :00:00").getTime();
+const targetDate = new Date("July 09, 2026 00:00:00").getTime();
 
 const timer = setInterval(() => {
 
@@ -412,7 +412,11 @@ document.getElementById("countdown").innerHTML =
 
 },1000);
 
-function showQuestion(){2 3document.getElementById("questionBox").style.display="block";4 5};
+function showQuestion(){
+
+document.getElementById("questionBox").style.display="block";
+
+}
 
 function checkDate(){
 
