@@ -386,6 +386,119 @@ padding:20px;
 
 }
 
+  .flip-card{
+
+height:350px;
+
+perspective:1200px;
+
+cursor:pointer;
+
+}
+
+.flip-card-inner{
+
+position:relative;
+
+width:100%;
+
+height:100%;
+
+transition:transform .8s;
+
+transform-style:preserve-3d;
+
+}
+
+.flip-card.flipped .flip-card-inner{
+
+transform:rotateY(180deg);
+
+}
+
+.flip-card-front,
+.flip-card-back{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+border-radius:25px;
+
+backface-visibility:hidden;
+
+overflow:hidden;
+
+}
+
+.flip-card-front{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
+transition:.4s;
+
+}
+
+.flip-card:hover .flip-card-front{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(255,105,180,.30);
+
+}
+
+.flip-card-back{
+
+transform:rotateY(180deg);
+
+}
+
+.flip-card-back img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:25px;
+
+}
+
+.memory-title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.3rem;
+
+text-align:center;
+
+line-height:1.5;
+
+padding:20px;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
 </style>
 </head>
 
@@ -416,35 +529,93 @@ Happy Birthday ❤️
 <div class="section-subtitle">
 Today is all about you ✨
 </div>
-
 <div class="gallery">
 
-<div class="memory-card" onclick="openImage('IMG20260308103705.jpg')">
-    <div class="memory-title">
-        ❤️<br><br>
-        Our First Meet
-    </div>
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+❤️
+<br><br>
+Our First Meet
+</div>
 </div>
 
-<div class="memory-card" onclick="openImage('IMG20260322104713.jpg')">
-    <div class="memory-title">
-        🎁<br><br>
-        Our First Gift
-    </div>
+<div class="flip-card-back">
+<img src="IMG20260308103705.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
 </div>
 
-<div class="memory-card" onclick="openImage('IMG20260322171904.jpg')">
-    <div class="memory-title">
-        🚗<br><br>
-        Our Unplanned Small Trip
-    </div>
 </div>
 
-<div class="memory-card" onclick="openImage('IMG20260517191156.jpg')">
-    <div class="memory-title">
-        💕<br><br>
-        Me and My Darling
-    </div>
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+🎁
+<br><br>
+Our First Gift
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20260322104713.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+🚗
+<br><br>
+Our Unplanned Small Trip
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20260322171904.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+💕
+<br><br>
+Me and My Darling
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20260517191156.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -673,6 +844,16 @@ function closeImage(){
     document.getElementById("lightbox").style.display = "none";
 
 }
+
+  document.querySelectorAll(".flip-card").forEach(card=>{
+
+card.addEventListener("click",function(){
+
+this.classList.toggle("flipped");
+
+});
+
+});
 
 </script>
 
