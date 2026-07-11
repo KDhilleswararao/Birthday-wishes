@@ -1241,6 +1241,17 @@ document.getElementById("musicBtn").innerHTML="🔇";
 
 }
 
+  let musicStarted = false;
+
+document.addEventListener("click", function () {
+
+    if (!musicStarted) {
+        startMusic();
+        musicStarted = true;
+    }
+
+}, { once: true });
+
   
 
 </script>
