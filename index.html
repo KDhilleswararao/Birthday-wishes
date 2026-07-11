@@ -631,10 +631,109 @@ text-shadow:0 0 18px rgba(255,180,217,.6);
 
 }
 
+  /* Loading Screen */
+
+#loadingScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:opacity 1s ease;
+
+}
+
+.loading-content{
+
+text-align:center;
+
+}
+
+.loading-heart{
+
+font-size:80px;
+
+animation:heartbeat 1.2s infinite;
+
+}
+
+.loading-content h2{
+
+margin-top:20px;
+
+font-family:'Dancing Script',cursive;
+
+font-size:3rem;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.loading-content p{
+
+margin-top:15px;
+
+font-size:1.2rem;
+
+color:#fbcfe8;
+
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+transform:scale(1);
+}
+
+25%{
+transform:scale(1.15);
+}
+
+50%{
+transform:scale(0.95);
+}
+
+75%{
+transform:scale(1.12);
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
+  <div id="loadingScreen">
+
+    <div class="loading-content">
+
+        <div class="loading-heart">❤️</div>
+
+        <h2>Loading Something Special...</h2>
+
+        <p>✨ Just a few moments... ✨</p>
+
+    </div>
+
+  </div>
 
 <div class="hero" id="hero">
 
@@ -883,10 +982,28 @@ With Lots of Love ❤️
 
 <script>
 
+  window.addEventListener("load",function(){
+
+setTimeout(()=>{
+
+const loader = document.getElementById("loadingScreen");
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},1000);
+
+},3000);
+
+});
+
 let openedCards = new Set();
 const totalCards = 4;
 
-const targetDate = new Date("July 11, 2026 16:06:00").getTime();
+const targetDate = new Date("July 11, 2026 16:17:00").getTime();
 
 const timer = setInterval(() => {
 
