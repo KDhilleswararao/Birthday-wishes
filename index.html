@@ -917,21 +917,21 @@ to be opened without the right key ❤️
 
 </div>
 
-<div id="finalButtonSection" style="display:none; margin-top:40px; text-align:center;">
+<div class="video-surprise" id="finalButtonSection" style="display:none;">
 
-<h2 style="font-family:'Dancing Script',cursive; color:#ffd1dc;">
-💌 One Last Thing...
-</h2>
+    <h2>
+        💌 One Last Thing...
+    </h2>
 
-<p style="font-family:'Playfair Display',serif;">
-I have watched all these memories countless times.
+    <p class="special-message" style="margin-bottom:25px;">
+        I have watched these memories countless times,
+        but there are a few things
+        I've always wanted to tell you from my heart... ❤️
+    </p>
 
-But there are a few things I always wanted to tell you from my heart. ❤️
-</p>
-
-<button class="unlock-btn" onclick="showLetter()">
-💖 Read My Heart
-</button>
+    <button class="unlock-btn" onclick="showLetter()">
+        💖 Read My Heart
+    </button>
 
 </div>
 
@@ -1000,7 +1000,7 @@ loader.style.display="none";
 let openedCards = new Set();
 const totalCards = 4;
 
-const targetDate = new Date("July 11, 2026 16:17:00").getTime();
+const targetDate = new Date("July 11, 2026 17:08:00").getTime();
 
 const timer = setInterval(() => {
 
@@ -1099,7 +1099,17 @@ const video = document.getElementById("memoryVideo");
 
 video.onended = function(){
 
-document.getElementById("finalButtonSection").style.display="block";
+setTimeout(()=>{
+
+const card=document.getElementById("finalButtonSection");
+
+card.style.display="block";
+
+card.scrollIntoView({
+behavior:"smooth"
+});
+
+},1500);
 
 };
 
