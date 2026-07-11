@@ -1209,9 +1209,15 @@ behavior:"smooth"
 
 });
 
-  const music=document.getElementById("bgMusic");
+  let music;
 
-music.volume=0.18;
+window.addEventListener("DOMContentLoaded", () => {
+
+    music = document.getElementById("bgMusic");
+
+    music.volume = 0.18;
+
+});
 
 function startMusic(){
 
