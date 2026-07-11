@@ -620,7 +620,7 @@ onclick="event.stopPropagation();openImage(this.src)">
 
 </div>
 
-<div class="video-surprise">
+<div class="video-surprise" id="videoSurprise" style="display:none;">
 
 <h2>🎁 One More Surprise Waiting For You ❤️</h2>
 
@@ -725,6 +725,9 @@ With Lots of Love ❤️
 </div>
 
 <script>
+
+let openedCards = new Set();
+const totalCards = 4;
 
 const targetDate = new Date("July 11, 2026 12:12:00").getTime();
 
@@ -845,11 +848,31 @@ function closeImage(){
 
 }
 
-  document.querySelectorAll(".flip-card").forEach(card=>{
+  document.querySelectorAll(".flip-card").forEach((card,index)=>{
 
 card.addEventListener("click",function(){
 
 this.classList.toggle("flipped");
+
+// Remember this card has been opened
+openedCards.add(index);
+
+// If all cards have been opened
+if(openedCards.size === totalCards){
+
+setTimeout(()=>{
+
+const surprise = document.getElementById("videoSurprise");
+
+surprise.style.display = "block";
+
+surprise.scrollIntoView({
+behavior:"smooth"
+});
+
+},1000);
+
+}
 
 });
 
