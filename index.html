@@ -330,6 +330,61 @@ color:#f8f8f8;
         opacity:1;
     }
 }
+  .memory-card{
+
+height:350px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
+}
+
+.memory-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:0 20px 40px rgba(255,105,180,.35);
+
+background:rgba(255,255,255,.12);
+
+}
+
+.memory-title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.2rem;
+
+text-align:center;
+
+line-height:1.5;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+padding:20px;
+
+}
 
 </style>
 </head>
@@ -363,10 +418,34 @@ Today is all about you ✨
 </div>
 
 <div class="gallery">
-<img src="IMG20251214161109.jpg" alt="Memory 1" onclick="openImage(this.src)">
-<img src="IMG20251214161727.jpg" alt="Memory 2" onclick="openImage(this.src)">
-<img src="IMG20260322171904.jpg" alt="Memory 3" onclick="openImage(this.src)">
-<img src="IMG20260308103705.jpg" alt="Memory 4" onclick="openImage(this.src)">
+
+<div class="memory-card" onclick="openImage('IMG20260308103705.jpg')">
+    <div class="memory-title">
+        ❤️<br><br>
+        Our First Meet
+    </div>
+</div>
+
+<div class="memory-card" onclick="openImage('IMG20260322104713.jpg')">
+    <div class="memory-title">
+        🎁<br><br>
+        Our First Gift
+    </div>
+</div>
+
+<div class="memory-card" onclick="openImage('IMG20260322171904.jpg')">
+    <div class="memory-title">
+        🚗<br><br>
+        Our Unplanned Small Trip
+    </div>
+</div>
+
+<div class="memory-card" onclick="openImage('IMG20260517191156.jpg')">
+    <div class="memory-title">
+        💕<br><br>
+        Me and My Darling
+    </div>
+</div>
 
 </div>
 
