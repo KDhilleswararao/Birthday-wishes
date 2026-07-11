@@ -1017,6 +1017,19 @@ With Lots of Love ❤️
 
 </div>
 
+  <audio id="bgMusic" loop>
+    <source src="lovemusic.mp3" type="audio/mpeg">
+  </audio>
+
+<div id="lightbox" class="lightbox" onclick="closeImage()">
+    <span class="close-btn">&times;</span>
+    <img id="lightboxImg">
+</div>
+
+  <button id="musicBtn" onclick="toggleMusic()">
+    🔊
+  </button>
+
 <script>
 
   window.addEventListener("load", function () {
@@ -1086,8 +1099,10 @@ if(selected === "2025-12-02"){
 
 document.getElementById("videoContainer").style.display = "block";
 
-  music.pause();
-document.getElementById("musicBtn").innerHTML="🔇";
+  if (music) {
+    music.pause();
+    document.getElementById("musicBtn").innerHTML = "🔇";
+}
 
 document.getElementById("videoContainer").scrollIntoView({
 behavior: "smooth"
@@ -1142,23 +1157,20 @@ document.addEventListener("DOMContentLoaded", function(){
 
 const video = document.getElementById("memoryVideo");
 
-video.onended=function(){
+video.onended = function () {
 
-music.play();
+    if (music) {
+        music.play();
+        document.getElementById("musicBtn").innerHTML = "🔊";
+    }
 
-document.getElementById("musicBtn").innerHTML="🔊";
-
-setTimeout(()=>{
-
-const card=document.getElementById("finalButtonSection");
-
-card.style.display="block";
-
-card.scrollIntoView({
-behavior:"smooth"
-});
-
-},1500);
+    setTimeout(() => {
+        const card = document.getElementById("finalButtonSection");
+        card.style.display = "block";
+        card.scrollIntoView({
+            behavior: "smooth"
+        });
+    }, 1500);
 
 };
 
@@ -1209,15 +1221,8 @@ behavior:"smooth"
 
 });
 
-  let music;
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    music = document.getElementById("bgMusic");
-
-    music.volume = 0.18;
-
-});
+const music = document.getElementById("bgMusic");
+music.volume = 0.18;
 
 function startMusic(){
 
@@ -1262,18 +1267,7 @@ document.addEventListener("click", function () {
 
 </script>
 
-  <audio id="bgMusic" loop>
-    <source src="lovemusic.mp3" type="audio/mpeg">
-  </audio>
-
-<div id="lightbox" class="lightbox" onclick="closeImage()">
-    <span class="close-btn">&times;</span>
-    <img id="lightboxImg">
-</div>
-
-  <button id="musicBtn" onclick="toggleMusic()">
-    🔊
-  </button>
+  
 
 </body>
 </html>
