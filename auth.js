@@ -53,26 +53,32 @@ loginBtn.addEventListener("click", async () => {
     }
 
     document.getElementById("authScreen").style.display = "none";
-    document.getElementById("website").style.display = "block";
+
+    startWebsite();
 
   } catch (err) {
-  console.error(err);
 
-  if (err.code === "auth/popup-closed-by-user") {
-    return; // User simply closed the popup
+    console.error(err);
+
+    if (err.code === "auth/popup-closed-by-user") {
+      return;
+    }
+
+    alert(err.message);
+
   }
-
-  alert(err.message);
-}
 
 });
 
 onAuthStateChanged(auth, (user) => {
 
   if (!user) {
+
     document.getElementById("authScreen").style.display = "flex";
     document.getElementById("website").style.display = "none";
+
     return;
+
   }
 
   const email = user.email.toLowerCase();
@@ -80,7 +86,8 @@ onAuthStateChanged(auth, (user) => {
   if (allowedUsers.includes(email)) {
 
     document.getElementById("authScreen").style.display = "none";
-    document.getElementById("website").style.display = "block";
+
+    startWebsite();
 
   } else {
 
