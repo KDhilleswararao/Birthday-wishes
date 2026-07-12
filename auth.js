@@ -56,11 +56,14 @@ loginBtn.addEventListener("click", async () => {
     document.getElementById("website").style.display = "block";
 
   } catch (err) {
+  console.error(err);
 
-    console.error(err);
-    alert(err.message);
-
+  if (err.code === "auth/popup-closed-by-user") {
+    return; // User simply closed the popup
   }
+
+  alert(err.message);
+}
 
 });
 
