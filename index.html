@@ -1019,10 +1019,12 @@ to be opened without the right key ❤️
         but there are a few things
         I've always wanted to tell you from my heart... ❤️
     </p>
-
-    <button class="unlock-btn" onclick="showLetter()">
-        💖 Read My Heart
-    </button>
+<button
+    id="readHeartBtn"
+    class="unlock-btn"
+    onclick="showLetter()">
+    💖 Read My Heart
+</button>
 
 </div>
 
@@ -1172,23 +1174,23 @@ alert(
 }
 
 
-function showLetter(){
+function showLetter() {
 
+    // Pause music but keep its current position
     music.pause();
+    document.getElementById("musicBtn").innerHTML = "🔇";
 
-    document.getElementById("musicBtn").innerHTML="🔇";
+    // Get only the Read My Heart button
+    const btn = document.getElementById("readHeartBtn");
 
-    const btn=document.querySelector(".unlock-btn");
+    btn.innerHTML = "💌 Opening My Heart...";
+    btn.disabled = true;
 
-    btn.innerHTML="💌 Opening My Heart...";
+    setTimeout(() => {
 
-    btn.disabled=true;
+        window.open("Letter.pdf", "_blank");
 
-    setTimeout(()=>{
-
-        window.open("Letter.pdf","_blank");
-
-    },1500);
+    }, 1500);
 
 }
 
@@ -1339,20 +1341,16 @@ document.getElementById("musicBtn").innerHTML="🔇";
 
 }
 
-  document.addEventListener("visibilitychange",function(){
+  document.addEventListener("visibilitychange", function () {
 
-    if(!document.hidden){
+    if (!document.hidden) {
 
-        if(document.getElementById("surprise").style.display==="block"){
-
-            if(music.paused){
-
-                music.play();
-
-                document.getElementById("musicBtn").innerHTML="🔊";
-
-            }
-
+        if (
+            document.getElementById("surprise").style.display === "block" &&
+            music.paused
+        ) {
+            music.play();
+            document.getElementById("musicBtn").innerHTML = "🔊";
         }
 
     }
