@@ -34,49 +34,53 @@ const allowedUsers = [
 
 const loginBtn = document.getElementById("googleLoginBtn");
 
-loginBtn.addEventListener("click", async () => {
+if (loginBtn) {
 
-  try {
+  loginBtn.addEventListener("click", async () => {
 
-    const result = await signInWithPopup(auth, provider);
+    try {
 
-    const email = result.user.email.toLowerCase();
+      const result = await signInWithPopup(auth, provider);
 
-    if (!allowedUsers.includes(email)) {
+      const email = result.user.email.toLowerCase();
 
-      alert("❤️ This surprise is only for someone special.");
+      if (!allowedUsers.includes(email)) {
 
-      await signOut(auth);
+        alert("❤️ This surprise is only for someone special.");
 
-      return;
+        await signOut(auth);
+        return;
+
+      }
+
+      document.getElementById("authScreen").style.display = "none";
+
+      if (window.startWebsite) {
+        window.startWebsite();
+      }
+
+    } catch (err) {
+
+      console.error(err);
+
+      if (err.code === "auth/popup-closed-by-user") {
+        return;
+      }
+
+      alert(err.message);
 
     }
 
-    document.getElementById("authScreen").style.display = "none";
+  });
 
-    startWebsite();
+}
 
-  } catch (err) {
-
-    console.error(err);
-
-    if (err.code === "auth/popup-closed-by-user") {
-      return;
-    }
-
-    alert(err.message);
-
-  }
-
-});
-
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
 
   if (!user) {
 
     document.getElementById("authScreen").style.display = "flex";
     document.getElementById("website").style.display = "none";
-
     return;
 
   }
@@ -87,11 +91,13 @@ onAuthStateChanged(auth, (user) => {
 
     document.getElementById("authScreen").style.display = "none";
 
-    startWebsite();
+    if (window.startWebsite) {
+      window.startWebsite();
+    }
 
   } else {
 
-    signOut(auth);
+    await signOut(auth);
 
     document.getElementById("authScreen").style.display = "flex";
     document.getElementById("website").style.display = "none";
