@@ -22,48 +22,48 @@ const auth = getAuth(app);
 
 const provider = new GoogleAuthProvider();
 
+provider.setCustomParameters({
+  prompt: "select_account"
+});
+
 const allowedUsers = [
   "kagithapallidhilleswararao@gmail.com",
   "maradapavan18@gmail.com",
   "renukayarabati37@gmail.com"
 ];
 
-// Make login() available to your HTML button
-window.login = function () {
+const loginBtn = document.getElementById("googleLoginBtn");
 
-  signInWithPopup(auth, provider)
-    .then((result) => {
+loginBtn.addEventListener("click", async () => {
 
-      const email = result.user.email.toLowerCase();
+  try {
 
-      if (!allowedUsers.includes(email)) {
+    const result = await signInWithPopup(auth, provider);
 
-        alert("❤️ This surprise is only for someone special.");
+    const email = result.user.email.toLowerCase();
 
-        signOut(auth);
+    if (!allowedUsers.includes(email)) {
 
-        return;
+      alert("❤️ This surprise is only for someone special.");
 
-      }
+      await signOut(auth);
 
-      // Hide login screen
-      document.getElementById("authScreen").style.display = "none";
+      return;
 
-      // Show website
-      document.getElementById("website").style.display = "block";
+    }
 
-    })
-    .catch((error) => {
+    document.getElementById("authScreen").style.display = "none";
+    document.getElementById("website").style.display = "block";
 
-      console.log(error);
+  } catch (err) {
 
-      alert(error.message);
+    console.error(err);
+    alert(err.message);
 
-    });
+  }
 
-};
+});
 
-// If user already signed in
 onAuthStateChanged(auth, (user) => {
 
   if (!user) return;
@@ -73,12 +73,7 @@ onAuthStateChanged(auth, (user) => {
   if (allowedUsers.includes(email)) {
 
     document.getElementById("authScreen").style.display = "none";
-
     document.getElementById("website").style.display = "block";
-
-  } else {
-
-    signOut(auth);
 
   }
 
