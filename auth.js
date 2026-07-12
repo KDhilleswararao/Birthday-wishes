@@ -21,7 +21,6 @@ const auth = getAuth(app);
 
 const allowedUsers = [
   "kagithapallidhilleswararao@gmail.com",
-  "saiandkumar11@gmail.com",
   "maradapavan18@gmail.com",
   "renukayarabati37@gmail.com"
 ];
