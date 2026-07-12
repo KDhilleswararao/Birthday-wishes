@@ -27,17 +27,30 @@ const allowedUsers = [
 
 const provider = new GoogleAuthProvider();
 
-signInWithPopup(auth, provider)
-  .then((result) => {
-    const email = result.user.email.toLowerCase();
+document.getElementById("googleSignInBtn").addEventListener("click", () => {
 
-    if (!allowedUsers.includes(email)) {
-      alert("Access Denied!");
-      signOut(auth);
-      document.body.innerHTML =
-        "<h1 style='text-align:center;margin-top:100px'>❌ Access Denied</h1>";
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+  signInWithPopup(auth, provider)
+    .then((result) => {
+
+      const email = result.user.email.toLowerCase();
+
+      if (!allowedUsers.includes(email)) {
+        alert("❤️ This surprise is only for someone special.");
+        signOut(auth);
+        return;
+      }
+
+      // Hide login screen
+      document.getElementById("loginPage").style.display = "none";
+
+      // Show your surprise
+      document.getElementById("mainContent").style.display = "block";
+
+      startCountdown();
+
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+});
