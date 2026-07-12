@@ -1087,23 +1087,29 @@ With Lots of Love ❤️
 
 <script>
 
-  window.addEventListener("load", function () {
+  function startWebsite(){
 
-    setTimeout(() => {
+    document.getElementById("website").style.display = "block";
 
-        const loader = document.getElementById("loadingScreen");
+    const loader = document.getElementById("loadingScreen");
 
-        loader.style.opacity = "0";
+    loader.style.display = "flex";
+    loader.style.opacity = "1";
 
-        setTimeout(() => {
+    setTimeout(()=>{
 
-            loader.style.display = "none";
+        loader.style.opacity="0";
+
+        setTimeout(()=>{
+
+            loader.style.display="none";
 
         },1000);
 
     },3000);
 
-});
+  }
+
 
 let openedCards = new Set();
 const totalCards = 4;
