@@ -1121,11 +1121,17 @@ alert(
 
 function showLetter(){
 
-document.getElementById("loveLetter").style.display="block";
+const btn=document.querySelector(".unlock-btn");
 
-document.getElementById("loveLetter").scrollIntoView({
-behavior:"smooth"
-});
+btn.innerHTML="❤️ Preparing your letter...";
+
+btn.disabled=true;
+
+setTimeout(()=>{
+
+window.open("Letter.pdf","_blank");
+
+},2000);
 
 }
 
