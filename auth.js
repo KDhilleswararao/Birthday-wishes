@@ -27,11 +27,9 @@ const allowedUsers = [
 
 const provider = new GoogleAuthProvider();
 
-document.getElementById("googleSignInBtn").addEventListener("click", () => {
-
+window.login = function () {
   signInWithPopup(auth, provider)
     .then((result) => {
-
       const email = result.user.email.toLowerCase();
 
       if (!allowedUsers.includes(email)) {
@@ -40,17 +38,10 @@ document.getElementById("googleSignInBtn").addEventListener("click", () => {
         return;
       }
 
-      // Hide login screen
-      document.getElementById("loginPage").style.display = "none";
-
-      // Show your surprise
-      document.getElementById("mainContent").style.display = "block";
-
-      startCountdown();
-
+      // Call your function to continue
+      showMainContent();   // <-- replace with your actual function if different
     })
     .catch((error) => {
       console.log(error);
     });
-
-});
+};
