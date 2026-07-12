@@ -1097,11 +1097,9 @@ With Lots of Love ❤️
 
             loader.style.display = "none";
 
-            startMusic();   // Start background music after loading screen
+        },1000);
 
-        }, 1000);
-
-    }, 3000);
+    },3000);
 
 });
 
@@ -1121,6 +1119,8 @@ clearInterval(timer);
 
 document.getElementById("hero").style.display="none";
 document.getElementById("surprise").style.display="block";
+
+startMusic();
 
 startHearts();
 
@@ -1174,17 +1174,21 @@ alert(
 
 function showLetter(){
 
-const btn=document.querySelector(".unlock-btn");
+    music.pause();
 
-btn.innerHTML="❤️ Preparing your letter...";
+    document.getElementById("musicBtn").innerHTML="🔇";
 
-btn.disabled=true;
+    const btn=document.querySelector(".unlock-btn");
 
-setTimeout(()=>{
+    btn.innerHTML="💌 Opening My Heart...";
 
-window.open("Letter.pdf","_blank");
+    btn.disabled=true;
 
-},2000);
+    setTimeout(()=>{
+
+        window.open("Letter.pdf","_blank");
+
+    },1500);
 
 }
 
@@ -1212,24 +1216,48 @@ heart.remove();
 
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded",function(){
 
-const video = document.getElementById("memoryVideo");
+const video=document.getElementById("memoryVideo");
 
-video.onended = function () {
+video.onplay=function(){
 
-    if (music) {
+    music.pause();
+
+    document.getElementById("musicBtn").innerHTML="🔇";
+
+};
+
+video.onpause=function(){
+
+    if(!video.ended){
+
         music.play();
-        document.getElementById("musicBtn").innerHTML = "🔊";
+
+        document.getElementById("musicBtn").innerHTML="🔊";
+
     }
 
-    setTimeout(() => {
-        const card = document.getElementById("finalButtonSection");
-        card.style.display = "block";
+};
+
+video.onended=function(){
+
+    music.play();
+document.getElementById("musicBtn").innerHTML="🔊";
+
+    setTimeout(()=>{
+
+        const card=document.getElementById("finalButtonSection");
+
+        card.style.display="block";
+
         card.scrollIntoView({
-            behavior: "smooth"
+
+            behavior:"smooth"
+
         });
-    }, 1500);
+
+    },1500);
 
 };
 
@@ -1311,16 +1339,27 @@ document.getElementById("musicBtn").innerHTML="🔇";
 
 }
 
-  let musicStarted = false;
+  document.addEventListener("visibilitychange",function(){
 
-document.addEventListener("click", function () {
+    if(!document.hidden){
 
-    if (!musicStarted) {
-        startMusic();
-        musicStarted = true;
+        if(document.getElementById("surprise").style.display==="block"){
+
+            if(music.paused){
+
+                music.play();
+
+                document.getElementById("musicBtn").innerHTML="🔊";
+
+            }
+
+        }
+
     }
 
-}, { once: true });
+});
+
+  
 
   
 
