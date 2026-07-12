@@ -1,52 +1,42 @@
-import { auth, provider } from "./firebase.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import {
+  getAuth,
+  GoogleAuthProvider,
   signInWithPopup,
-  onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-// ✅ Allowed Gmail accounts
+const firebaseConfig = {
+  apiKey: "AIzaSyCsgYlbQGVqsvMHW1ePowbzpJ5Va_408tY",
+  authDomain: "birthday-surprise-7368.firebaseapp.com",
+  projectId: "birthday-surprise-7368",
+  storageBucket: "birthday-surprise-7368.firebasestorage.app",
+  messagingSenderId: "897984473203",
+  appId: "1:897984473203:web:799b7e28abf5ddb9152206"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 const allowedUsers = [
   "kagithapallidhilleswararao@gmail.com",
   "saiandkumar11@gmail.com"
 ];
 
-window.startAuthentication = function () {
+const provider = new GoogleAuthProvider();
 
-  onAuthStateChanged(auth, (user) => {
+signInWithPopup(auth, provider)
+  .then((result) => {
+    const email = result.user.email.toLowerCase();
 
-    if (user) {
-
-      if (allowedUsers.includes(user.email)) {
-
-        // Hide authentication screen
-        document.getElementById("authScreen").style.display = "none";
-
-        // Show website
-        document.getElementById("website").style.display = "block";
-
-      } else {
-
-        alert("❤️ This surprise is only for someone special.");
-
-        signOut(auth);
-
-      }
-
+    if (!allowedUsers.includes(email)) {
+      alert("Access Denied!");
+      signOut(auth);
+      document.body.innerHTML =
+        "<h1 style='text-align:center;margin-top:100px'>❌ Access Denied</h1>";
     }
-
+  })
+  .catch((error) => {
+    console.log(error);
   });
-
-};
-
-window.login = function () {
-
-  signInWithPopup(auth, provider)
-    .catch((err) => {
-
-      alert(err.message);
-
-    });
-
-};
