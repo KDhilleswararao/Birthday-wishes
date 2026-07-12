@@ -757,6 +757,57 @@ transform:scale(1.1);
 
 <body>
 
+<div id="authScreen" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+">
+
+<div style="
+text-align:center;
+max-width:600px;
+padding:40px;
+">
+
+<div style="font-size:80px;">❤️</div>
+
+<h1 style="
+font-family:'Dancing Script',cursive;
+font-size:48px;
+margin-top:20px;
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+A Surprise Made With Love
+</h1>
+
+<p class="special-message" style="margin-top:25px;">
+Before opening this surprise,
+please continue with your Google account.
+</p>
+
+<br>
+
+<button
+class="unlock-btn"
+onclick="login()">
+Continue with Google ❤️
+</button>
+
+</div>
+
+</div>
+
+<div id="website" style="display:none;">
+
   <div id="loadingScreen">
 
     <div class="loading-content">
@@ -1270,6 +1321,17 @@ document.addEventListener("click", function () {
 }, { once: true });
 
   
+
+</script>
+
+  </div>
+
+<script type="module">
+
+import "./firebase.js";
+import "./auth.js";
+
+startAuthentication();
 
 </script>
 
