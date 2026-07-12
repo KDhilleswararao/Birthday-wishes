@@ -75,12 +75,17 @@ onAuthStateChanged(auth, (user) => {
   const email = user.email.toLowerCase();
 
   if (allowedUsers.includes(email)) {
+
     document.getElementById("authScreen").style.display = "none";
     document.getElementById("website").style.display = "block";
+
   } else {
+
     signOut(auth);
+
     document.getElementById("authScreen").style.display = "flex";
     document.getElementById("website").style.display = "none";
+
   }
 
 });
