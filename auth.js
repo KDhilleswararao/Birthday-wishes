@@ -4,7 +4,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  signOut
+  signOut,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -19,29 +20,66 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const provider = new GoogleAuthProvider();
+
 const allowedUsers = [
   "kagithapallidhilleswararao@gmail.com",
   "maradapavan18@gmail.com",
   "renukayarabati37@gmail.com"
 ];
 
-const provider = new GoogleAuthProvider();
-
+// Make login() available to your HTML button
 window.login = function () {
+
   signInWithPopup(auth, provider)
     .then((result) => {
+
       const email = result.user.email.toLowerCase();
 
       if (!allowedUsers.includes(email)) {
+
         alert("❤️ This surprise is only for someone special.");
+
         signOut(auth);
+
         return;
+
       }
 
-      // Call your function to continue
-      showMainContent();   // <-- replace with your actual function if different
+      // Hide login screen
+      document.getElementById("authScreen").style.display = "none";
+
+      // Show website
+      document.getElementById("website").style.display = "block";
+
     })
     .catch((error) => {
+
       console.log(error);
+
+      alert(error.message);
+
     });
+
 };
+
+// If user already signed in
+onAuthStateChanged(auth, (user) => {
+
+  if (!user) return;
+
+  const email = user.email.toLowerCase();
+
+  if (allowedUsers.includes(email)) {
+
+    document.getElementById("authScreen").style.display = "none";
+
+    document.getElementById("website").style.display = "block";
+
+  } else {
+
+    signOut(auth);
+
+  }
+
+});
