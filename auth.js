@@ -66,15 +66,21 @@ loginBtn.addEventListener("click", async () => {
 
 onAuthStateChanged(auth, (user) => {
 
-  if (!user) return;
+  if (!user) {
+    document.getElementById("authScreen").style.display = "flex";
+    document.getElementById("website").style.display = "none";
+    return;
+  }
 
   const email = user.email.toLowerCase();
 
   if (allowedUsers.includes(email)) {
-
     document.getElementById("authScreen").style.display = "none";
     document.getElementById("website").style.display = "block";
-
+  } else {
+    signOut(auth);
+    document.getElementById("authScreen").style.display = "flex";
+    document.getElementById("website").style.display = "none";
   }
 
 });
