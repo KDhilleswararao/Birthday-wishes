@@ -711,45 +711,7 @@ transform:scale(1.12);
 
 }
 
-  #musicBtn{
-
-position:fixed;
-
-bottom:20px;
-
-right:20px;
-
-width:60px;
-
-height:60px;
-
-border:none;
-
-border-radius:50%;
-
-font-size:26px;
-
-cursor:pointer;
-
-background:rgba(255,255,255,.15);
-
-backdrop-filter:blur(12px);
-
-color:white;
-
-box-shadow:0 8px 25px rgba(255,105,180,.35);
-
-z-index:9999;
-
-transition:.3s;
-
-}
-
-#musicBtn:hover{
-
-transform:scale(1.1);
-
-}
+ 
 
 </style>
 </head>
@@ -1213,20 +1175,9 @@ document.addEventListener("DOMContentLoaded",function(){
 
 const video=document.getElementById("memoryVideo");
 
-video.onplay=function(){
+video.onplay=function(){};
 
-
-};
-
-video.onpause=function(){
-
-    if(!video.ended){
-
- 
-
-    }
-
-};
+video.onpause=function(){};
 
 video.onended=function(){
 
