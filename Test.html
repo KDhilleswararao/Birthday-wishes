@@ -1196,4 +1196,116 @@ heart.className="heart";
 heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
 
 heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(1
+heart.style.fontSize=(18+Math.random()*20)+"px";
+heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},12000);
+
+},300);
+
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const video=document.getElementById("memoryVideo");
+
+video.onplay=function(){
+
+
+};
+
+video.onpause=function(){
+
+    if(!video.ended){
+
+ 
+
+    }
+
+};
+
+video.onended=function(){
+
+    
+
+    setTimeout(()=>{
+
+        const card=document.getElementById("finalButtonSection");
+
+        card.style.display="block";
+
+        card.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    },1500);
+
+};
+
+});
+
+
+function openImage(src){
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.getElementById("lightboxImg").src = src;
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+  document.querySelectorAll(".flip-card").forEach((card,index)=>{
+
+card.addEventListener("click",function(){
+
+this.classList.toggle("flipped");
+
+// Remember this card has been opened
+openedCards.add(index);
+
+// If all cards have been opened
+if(openedCards.size === totalCards){
+
+setTimeout(()=>{
+
+const surprise = document.getElementById("videoSurprise");
+
+surprise.style.display = "block";
+
+surprise.scrollIntoView({
+behavior:"smooth"
+});
+
+},1000);
+
+}
+
+});
+
+});
+
+window.startWebsite = startWebsite;
+
+
+
+</script>
+
+  </div>
+
+
+
+  
+
+</body>
+</html>
