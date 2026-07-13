@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Someone Very Special ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.card{
+width:100%;
+max-width:700px;
+padding:45px;
+text-align:center;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border-radius:30px;
+
+box-shadow:0 8px 40px rgba(255,105,180,.25);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:15px;
+font-family:'Dancing Script',cursive;
+}
+
+.subtitle{
+font-size:1.2rem;
+color:#fbcfe8;
+margin-top:15px;
+}
+
+#countdown{
+font-size:2rem;
+font-weight:bold;
+color:#ffb4d9;
+margin-top:20px;
+}
+
+#surprise{
+display:none;
+padding:40px 20px;
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.top-title{
+text-align:center;
+font-size:4.5rem;
+margin-bottom:10px;
+font-family:'Dancing Script',cursive;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-subtitle{
+text-align:center;
+color:#fbcfe8;
+font-size:1.2rem;
+margin-bottom:40px;
+}
+
+.gallery{
+max-width:1200px;
+margin:auto;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:25px;
+transition:0.4s;
+box-shadow:0 10px 30px rgba(255,255,255,.1);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.letter{
+max-width:900px;
+margin:70px auto;
+
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+
+padding:45px;
+border-radius:30px;
+
+box-shadow:0 8px 40px rgba(255,105,180,.15);
+}
+
+.letter h2{
+text-align:center;
+margin-bottom:25px;
+color:#ffd1dc;
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+}
+
+.letter p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:2.2;
+color:#f8f8f8;
+text-align:center;
+}
+
+.signature{
+margin-top:35px;
+text-align:center;
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+color:#ffb4d9;
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+pointer-events:none;
+animation:float linear forwards;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+.video-surprise{
+max-width:800px;
+margin:70px auto;
+text-align:center;
+
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+
+padding:40px;
+border-radius:30px;
+box-shadow:0 8px 40px rgba(255,105,180,.15);
+}
+
+.video-surprise h2{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+color:#ffd1dc;
+margin-bottom:20px;
+}
+
+.unlock-btn{
+
+background:linear-gradient(
+135deg,
+#ff7eb3,
+#ff4f81
+);
+
+color:white;
+border:none;
+
+padding:18px 40px;
+
+border-radius:50px;
+
+font-size:18px;
+font-weight:600;
+
+box-shadow:
+0 10px 25px rgba(255,79,129,.35);
+
+cursor:pointer;
+
+transition:.4s;
+
+font-family:'Playfair Display',serif;
+}
+
+.unlock-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 35px rgba(255,79,129,.45);
+
+}
+
+
+
+#loveDate{
+padding:12px;
+border-radius:12px;
+border:none;
+font-size:16px;
+}
+
+@media(max-width:768px){
+
+.top-title{
+font-size:3.2rem;
+}
+
+.hero h1{
+font-size:2.4rem;
+}
+
+#countdown{
+font-size:1.5rem;
+}
+
+.letter p{
+font-size:1.15rem;
+line-height:2;
+}
+
+} 
+
+.video-surprise p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:1.8;
+color:#f8f8f8;
+}
+
+#questionBox p{
+font-family:'Playfair Display',serif;
+font-size:1.35rem;
+line-height:1.8;
+color:#f8f8f8;
+}
+
+
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:95%;
+    max-height:90%;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(255,255,255,.3);
+    animation:zoomIn .4s ease;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:45px;
+    color:white;
+    cursor:pointer;
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+  .memory-card{
+
+height:350px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
+}
+
+.memory-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:0 20px 40px rgba(255,105,180,.35);
+
+background:rgba(255,255,255,.12);
+
+}
+
+.memory-title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.2rem;
+
+text-align:center;
+
+line-height:1.5;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+padding:20px;
+
+}
+
+  .flip-card{
+
+height:350px;
+
+perspective:1200px;
+
+cursor:pointer;
+
+}
+
+.flip-card-inner{
+
+position:relative;
+
+width:100%;
+
+height:100%;
+
+transition:transform .8s;
+
+transform-style:preserve-3d;
+
+}
+
+.flip-card.flipped .flip-card-inner{
+
+transform:rotateY(180deg);
+
+}
+
+.flip-card-front,
+.flip-card-back{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+border-radius:25px;
+
+backface-visibility:hidden;
+
+overflow:hidden;
+
+}
+
+.flip-card-front{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:0 10px 30px rgba(255,105,180,.15);
+
+transition:.4s;
+
+}
+
+.flip-card:hover .flip-card-front{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(255,105,180,.30);
+
+}
+
+.flip-card-back{
+
+transform:rotateY(180deg);
+
+}
+
+.flip-card-back img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:25px;
+
+}
+
+.memory-title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.3rem;
+
+text-align:center;
+
+line-height:1.5;
+
+padding:20px;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+  .countdown-container{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.time-box{
+
+width:100px;
+
+height:110px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.15);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 10px 30px rgba(255,105,180,.25);
+
+transition:.3s;
+
+}
+
+.time-box:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(255,105,180,.4);
+
+}
+
+.time-box div{
+
+font-size:2.4rem;
+
+font-weight:bold;
+
+color:#ffd1dc;
+
+}
+
+.time-box span{
+
+margin-top:8px;
+
+font-size:15px;
+
+color:#fbcfe8;
+
+letter-spacing:1px;
+
+}
+
+@media(max-width:768px){
+
+.time-box{
+
+width:78px;
+
+height:90px;
+
+}
+
+.time-box div{
+
+font-size:1.8rem;
+
+}
+
+.time-box span{
+
+font-size:12px;
+
+}
+
+}
+
+  .special-message{
+
+font-family:'Playfair Display',serif;
+
+font-size:1.15rem;
+
+color:#fbcfe8;
+
+text-align:center;
+
+line-height:1.8;
+
+letter-spacing:.5px;
+
+opacity:.95;
+
+  }
+
+@keyframes glowText{
+
+0%,100%{
+opacity:.8;
+text-shadow:0 0 5px rgba(255,180,217,.2);
+}
+
+50%{
+opacity:1;
+text-shadow:0 0 18px rgba(255,180,217,.6);
+}
+
+}
+
+  /* Loading Screen */
+
+#loadingScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:opacity 1s ease;
+
+}
+
+.loading-content{
+
+text-align:center;
+
+}
+
+.loading-heart{
+
+font-size:80px;
+
+animation:heartbeat 1.2s infinite;
+
+}
+
+.loading-content h2{
+
+margin-top:20px;
+
+font-family:'Dancing Script',cursive;
+
+font-size:3rem;
+
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.loading-content p{
+
+margin-top:15px;
+
+font-size:1.2rem;
+
+color:#fbcfe8;
+
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+transform:scale(1);
+}
+
+25%{
+transform:scale(1.15);
+}
+
+50%{
+transform:scale(0.95);
+}
+
+75%{
+transform:scale(1.12);
+}
+
+}
+
+  #musicBtn{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+width:60px;
+
+height:60px;
+
+border:none;
+
+border-radius:50%;
+
+font-size:26px;
+
+cursor:pointer;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(12px);
+
+color:white;
+
+box-shadow:0 8px 25px rgba(255,105,180,.35);
+
+z-index:9999;
+
+transition:.3s;
+
+}
+
+#musicBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="authScreen" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999999;
+">
+
+<div style="
+text-align:center;
+max-width:600px;
+padding:40px;
+">
+
+<div style="font-size:80px;">❤️</div>
+
+<h1 style="
+font-family:'Dancing Script',cursive;
+font-size:48px;
+margin-top:20px;
+background:linear-gradient(to right,#ffd1dc,#ff69b4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+A Surprise Made With Love
+</h1>
+
+<p class="special-message" style="margin-top:25px;">
+Before opening this surprise,
+please continue with your Google account.
+</p>
+
+<br>
+
+<button
+id="googleLoginBtn"
+class="unlock-btn">
+Continue with Google ❤️
+</button>
+
+</div>
+
+</div>
+
+<div id="website" style="display:none;">
+
+  <div id="loadingScreen">
+
+    <div class="loading-content">
+
+        <div class="loading-heart">❤️</div>
+
+        <h2>Loading Something Special...</h2>
+
+        <p class="special-message" style="margin-top:15px;">
+✨ Just a few moments... ✨
+</p>
+
+    </div>
+
+  </div>
+
+<div class="hero" id="hero">
+
+<div class="card">
+
+<h1>❤️ A Special Surprise ❤️</h1>
+
+<div class="special-message" >
+  For Someone Who Means Everything To Me
+</div>
+<div class="countdown-container">
+
+<div class="time-box">
+<div id="days">00</div>
+<span>Days</span>
+</div>
+
+<div class="time-box">
+<div id="hours">00</div>
+<span>Hours</span>
+</div>
+
+<div class="time-box">
+<div id="minutes">00</div>
+<span>Minutes</span>
+</div>
+
+<div class="time-box">
+<div id="seconds">00</div>
+<span>Seconds</span>
+</div>
+
+</div>
+<p class="special-message" style="margin-top:30px; animation:glowText 2.5s ease-in-out infinite;">
+    Every second brings us closer <br>
+    to your special day... ❤️
+  </p>
+
+</div>
+
+</div>
+
+<div id="surprise">
+
+<h1 class="top-title">
+Happy Birthday ❤️
+</h1>
+
+<p class="special-message" style="margin-bottom:40px;">
+Today is all about you ✨
+</p>
+<div class="gallery">
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+❤️
+<br><br>
+Our First Meet
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20251214161109.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+🎁
+<br><br>
+Our First Gift
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20251214161727.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+🚗
+<br><br>
+Our Unplanned Small Trip
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20260322171904.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="flip-card">
+
+<div class="flip-card-inner">
+
+<div class="flip-card-front">
+<div class="memory-title">
+💕
+<br><br>
+Me and My Darling
+</div>
+</div>
+
+<div class="flip-card-back">
+<img src="IMG20260308103705.jpg"
+onclick="event.stopPropagation();openImage(this.src)">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="video-surprise" id="videoSurprise" style="display:none;">
+
+<h2>🎁 One More Surprise Waiting For You ❤️</h2>
+
+<p class="special-message" style="margin-bottom:25px;">
+Some memories are too special
+to be opened without the right key ❤️
+</p>
+
+<button class="unlock-btn" onclick="showQuestion()">
+✨ Unlock Our Secret Memory ✨
+</button>
+
+<div id="questionBox" style="display:none; margin-top:30px;">
+<p class="special-message" style="margin-bottom:15px;">
+💌 What is the first day of our love journey?
+</p>
+
+<input type="date" id="loveDate">
+
+<br><br>
+
+<button class="unlock-btn" onclick="checkDate()">
+❤️ Verify
+</button>
+
+<div id="videoContainer" style="display:none; margin-top:30px;">
+
+<h3 style="margin-bottom:20px;">
+🎥 Our Beautiful Memories
+</h3>
+
+<video id="memoryVideo" controls style="width:100%; border-radius:20px;">
+  <source src="Special_Video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="video-surprise" id="finalButtonSection" style="display:none;">
+
+    <h2>
+        💌 One Last Thing...
+    </h2>
+
+    <p class="special-message" style="margin-bottom:25px;">
+        I have watched these memories countless times,
+        but there are a few things
+        I've always wanted to tell you from my heart... ❤️
+    </p>
+<button
+    id="readHeartBtn"
+    class="unlock-btn"
+    onclick="showLetter()">
+    💖 Read My Heart
+</button>
+
+</div>
+
+<div class="letter" id="loveLetter" style="display:none;">
+
+<h2>💌 To My Dear Renu...❤️</h2>
+
+<p>
+
+
+First of all, I am truly thankful to God for bringing my dream girl, my long-time crush, into my life permanently. Even today, it feels nothing less than a miracle.
+Almost eight years ago, I developed a crush on you, and from that day onwards, I was always curious about you. Deep inside, I had feelings for you, but practically I never had complete hope that one day we would end up together. So much time had passed, and I never expressed what I felt.
+There were many moments when I wanted to tell you everything, but something always stopped me. As I've already told you, one of the biggest reasons was that I never wanted to disturb your education or affect your future in any way.
+Life took us through different paths. During these years, you went through your own struggles, and I went through mine. But somewhere in my heart, those feelings for you never disappeared. They remained alive all along.
+From the very beginning, whenever I thought about marriage, I always imagined it with you. I don't know why, but that feeling never changed.
+And finally, God wrote a beautiful script for us. At a time when both of us were going through low phases in life, He brought us together. We stood by each other, supported each other, understood each other, and slowly fell in love.
+Our beautiful journey officially began on December 2, 2025, a day I can never forget in my life.
+To be honest, I felt that 2025 was one of the most difficult years I had ever experienced. But on that day, God gave me the most precious gift of my life — you. Because of you, that year became memorable for a beautiful reason.
+Even though our journey together has been relatively short, it feels like we have experienced so much in such little time.
+In the beginning, we simply enjoyed each other's company, loved each other deeply, and created beautiful memories. As time passed, we discovered things we liked and disliked about each other. I believe every relationship goes through such phases.
+But with every passing day, we learned to understand each other better. Every disagreement taught us something new. Every challenge made us stronger.
+One thing I truly admire about us is that neither of us gives up easily. No matter what happened, we always found our way back to each other. That mindset has strengthened the trust, belief, and bond we share.
+I want you to know something very important: I have never had a bad opinion of you. Sometimes situations made both of us react in ways we didn't intend, but those moments never defined who we are. We both know that our love is greater than those situations.
+From the very first day, I have always seen you as my future wife. You have forgiven my mistakes countless times. There were occasions when I didn't behave as well as I should have, and for that, I am truly sorry.
+But one thing will never change — my love and feelings for you.
+Thank you for coming into my life. Thank you for choosing me, supporting me, and becoming such an important part of my world.
+I promise that I will continue to work on myself and become a better person for you.
+I know the current situation for you and your family is not easy. But I strongly believe that better days are ahead. And I want you to know that I will always stand beside you. I promise to take care of you and support your family in every way I can.
+I am also sorry because I wanted to celebrate your birthday in a much grander way. Due to limited time and resources, I couldn't do everything I dreamed of doing. But please know that every small effort I made comes straight from my heart.
+Finally, I just want to say two things.
+Wish you many more happy returns of the day, Nanna.
+And most importantly...
+I love you so much, Renu.....❤️
+Happy Birthday, My Love. ❤️🎂
+
+</p>
+
+<div class="signature">
+With Lots of Love ❤️
+</div>
+
+</div>
+
+</div>
+
+
+<div id="lightbox" class="lightbox" onclick="closeImage()">
+    <span class="close-btn">&times;</span>
+    <img id="lightboxImg">
+</div>
+
+
+  <script type="module" src="auth.js"></script>
+
+<script>
+
+  function startWebsite() {
+
+    document.getElementById("website").style.display = "block";
+    document.getElementById("authScreen").style.display = "none";
+
+    const loader = document.getElementById("loadingScreen");
+
+    loader.style.display = "flex";
+    loader.style.opacity = "1";
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 1000);
+
+    }, 3000);
+
+  }
+
+
+let openedCards = new Set();
+const totalCards = 4;
+
+const targetDate = new Date("July 12, 2026 18:18:00").getTime();
+
+const timer = setInterval(() => {
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+if(distance <= 0){
+
+clearInterval(timer);
+
+document.getElementById("hero").style.display="none";
+document.getElementById("surprise").style.display="block";
+
+startHearts();
+
+return;
+}
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+  },1000);
+
+function showQuestion(){
+
+document.getElementById("questionBox").style.display="block";
+
+}
+
+function checkDate(){
+
+const selected = document.getElementById("loveDate").value;
+
+if(selected === "2025-12-02"){
+
+document.getElementById("videoContainer").style.display = "block";
+
+
+document.getElementById("videoContainer").scrollIntoView({
+behavior: "smooth"
+});
+
+}else{
+
+alert(
+"❌ That's not our special day, Nanna ❤️\n\nHint: The day our beautiful journey began."
+);
+
+}
+
+}
+
+
+function showLetter() {
+
+
+    // Get only the Read My Heart button
+    const btn = document.getElementById("readHeartBtn");
+
+    btn.innerHTML = "💌 Opening My Heart...";
+    btn.disabled = true;
+
+    setTimeout(() => {
+
+        window.open("Letter.pdf", "_blank");
+
+    }, 1500);
+
+}
+
+function startHearts(){
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💖","💕","💗"][Math.floor(Math.random()*4)];
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(1
