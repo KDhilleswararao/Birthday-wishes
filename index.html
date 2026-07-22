@@ -711,45 +711,7 @@ transform:scale(1.12);
 
 }
 
-  #musicBtn{
-
-position:fixed;
-
-bottom:20px;
-
-right:20px;
-
-width:60px;
-
-height:60px;
-
-border:none;
-
-border-radius:50%;
-
-font-size:26px;
-
-cursor:pointer;
-
-background:rgba(255,255,255,.15);
-
-backdrop-filter:blur(12px);
-
-color:white;
-
-box-shadow:0 8px 25px rgba(255,105,180,.35);
-
-z-index:9999;
-
-transition:.3s;
-
-}
-
-#musicBtn:hover{
-
-transform:scale(1.1);
-
-}
+ 
 
 </style>
 </head>
@@ -1069,18 +1031,12 @@ With Lots of Love ❤️
 
 </div>
 
-  <audio id="bgMusic" loop>
-    <source src="lovemusic.mp3" type="audio/mpeg">
-  </audio>
 
 <div id="lightbox" class="lightbox" onclick="closeImage()">
     <span class="close-btn">&times;</span>
     <img id="lightboxImg">
 </div>
 
-  <button id="musicBtn" onclick="toggleMusic()">
-    🔊
-  </button>
 
   <script type="module" src="auth.js"></script>
 
@@ -1128,8 +1084,6 @@ clearInterval(timer);
 document.getElementById("hero").style.display="none";
 document.getElementById("surprise").style.display="block";
 
-startMusic();
-
 startHearts();
 
 return;
@@ -1160,10 +1114,6 @@ if(selected === "2025-12-02"){
 
 document.getElementById("videoContainer").style.display = "block";
 
-  if (music) {
-    music.pause();
-    document.getElementById("musicBtn").innerHTML = "🔇";
-}
 
 document.getElementById("videoContainer").scrollIntoView({
 behavior: "smooth"
@@ -1182,9 +1132,6 @@ alert(
 
 function showLetter() {
 
-    // Pause music but keep its current position
-    music.pause();
-    document.getElementById("musicBtn").innerHTML = "🔇";
 
     // Get only the Read My Heart button
     const btn = document.getElementById("readHeartBtn");
@@ -1228,153 +1175,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
 const video=document.getElementById("memoryVideo");
 
-video.onplay=function(){
+video.onplay=function(){};
 
-    music.pause();
+video.onpause=function(){};
 
-    document.getElementById("musicBtn").innerHTML="🔇";
-
-};
-
-video.onpause=function(){
-
-    if(!video.ended){
-
-        music.play();
-
-        document.getElementById("musicBtn").innerHTML="🔊";
-
-    }
-
-};
-
-video.onended=function(){
-
-    music.play();
-document.getElementById("musicBtn").innerHTML="🔊";
-
-    setTimeout(()=>{
-
-        const card=document.getElementById("finalButtonSection");
-
-        card.style.display="block";
-
-        card.scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
-    },1500);
-
-};
-
-});
-
-
-function openImage(src){
-
-    document.getElementById("lightbox").style.display = "flex";
-
-    document.getElementById("lightboxImg").src = src;
-
-}
-
-function closeImage(){
-
-    document.getElementById("lightbox").style.display = "none";
-
-}
-
-  document.querySelectorAll(".flip-card").forEach((card,index)=>{
-
-card.addEventListener("click",function(){
-
-this.classList.toggle("flipped");
-
-// Remember this card has been opened
-openedCards.add(index);
-
-// If all cards have been opened
-if(openedCards.size === totalCards){
-
-setTimeout(()=>{
-
-const surprise = document.getElementById("videoSurprise");
-
-surprise.style.display = "block";
-
-surprise.scrollIntoView({
-behavior:"smooth"
-});
-
-},1000);
-
-}
-
-});
-
-});
-
-const music = document.getElementById("bgMusic");
-window.startWebsite = startWebsite;
-music.volume = 0.18;
-
-function startMusic(){
-
-music.play().catch(()=>{
-
-console.log("Autoplay blocked until user interaction.");
-
-});
-
-}
-
-function toggleMusic(){
-
-if(music.paused){
-
-music.play();
-
-document.getElementById("musicBtn").innerHTML="🔊";
-
-}else{
-
-music.pause();
-
-document.getElementById("musicBtn").innerHTML="🔇";
-
-}
-
-}
-
-  document.addEventListener("visibilitychange", function () {
-
-    if (!document.hidden) {
-
-        if (
-            document.getElementById("surprise").style.display === "block" &&
-            music.paused
-        ) {
-            music.play();
-            document.getElementById("musicBtn").innerHTML = "🔊";
-        }
-
-    }
-
-});
-
-  
-
-  
-
-</script>
-
-  </div>
-
-
-
-  
-
-</body>
-</html>
+video.onende
