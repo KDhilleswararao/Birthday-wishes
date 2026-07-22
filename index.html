@@ -1070,7 +1070,7 @@ With Lots of Love ❤️
 let openedCards = new Set();
 const totalCards = 4;
 
-const targetDate = new Date("July 12, 2026 18:18:00").getTime();
+const targetDate = new Date("July 22, 2026 22:28:00").getTime();
 
 const timer = setInterval(() => {
 
@@ -1179,4 +1179,84 @@ video.onplay=function(){};
 
 video.onpause=function(){};
 
-video.onende
+video.onended=function(){
+
+    
+
+    setTimeout(()=>{
+
+        const card=document.getElementById("finalButtonSection");
+
+        card.style.display="block";
+
+        card.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    },1500);
+
+};
+
+});
+
+
+function openImage(src){
+
+    document.getElementById("lightbox").style.display = "flex";
+
+    document.getElementById("lightboxImg").src = src;
+
+}
+
+function closeImage(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+  document.querySelectorAll(".flip-card").forEach((card,index)=>{
+
+card.addEventListener("click",function(){
+
+this.classList.toggle("flipped");
+
+// Remember this card has been opened
+openedCards.add(index);
+
+// If all cards have been opened
+if(openedCards.size === totalCards){
+
+setTimeout(()=>{
+
+const surprise = document.getElementById("videoSurprise");
+
+surprise.style.display = "block";
+
+surprise.scrollIntoView({
+behavior:"smooth"
+});
+
+},1000);
+
+}
+
+});
+
+});
+
+window.startWebsite = startWebsite;
+
+
+
+</script>
+
+  </div>
+
+
+
+  
+
+</body>
+</html>
